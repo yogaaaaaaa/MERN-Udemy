@@ -14,6 +14,6 @@ app.use("/api/auth", require("./api/auth.js"));
 app.use("/api/profile", require("./api/profile.js"));
 app.use("/api/posts", require("./api/posts.js"));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6969;
 
 app.listen(PORT, () => console.log(`Server up and running ${PORT}`));
