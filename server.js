@@ -16,4 +16,4 @@ app.use("/api/posts", require("./api/posts.js"));
 
 const PORT = process.env.PORT || 6969;
 
-app.listen(PORT, () => console.log(`Server up and running ${PORT}`));
+app.listen(PORT, () => console.log(`Server up and running on Port ${PORT}`));
