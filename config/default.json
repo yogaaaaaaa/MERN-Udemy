@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://yogaadhi:Inakarina24@adhipratama-cluster.pp6yu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://yogaadhi:Inakarina24@adhipratama-cluster.pp6yu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
