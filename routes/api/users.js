@@ -45,6 +45,7 @@ router.post(
         d: "mm",
       });
 
+      //creating user data to db
       user = new User({
         name,
         email,
