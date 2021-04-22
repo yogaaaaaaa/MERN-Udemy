@@ -1,0 +1,561 @@
+{
+	"info": {
+		"_postman_id": "c5e7d0eb-5239-4854-814d-c3d7b4666225",
+		"name": "Dev-SOCIAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users & Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"yoga\",\n    \"email\": \"yogaadh29@gmail.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get auth user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZDAyNmEzMDkwYTMzMWRiODRhNjczIn0sImlhdCI6MTYxODgwNTM1NCwiZXhwIjoxNjE5MTY1MzU0fQ.GqELVMFJi9t9No3sUB91qaG1HWp8rjRKUtSpeGDbPtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODgxOTY2NiwiZXhwIjoxNjE5MTc5NjY2fQ.QpetiKBVI59_kWmwqyOu-x0ucx8i0gDDI5kaiC8xUjc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"yogaadhi@icloud.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profiles",
+			"item": [
+				{
+					"name": "get logged in profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODg1MTY1OCwiZXhwIjoxNjE5MjExNjU4fQ.ZMRvt00Du4DzWl-0o1ZthlRovrFG2yIO90qkgU1PLiY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/profile/me",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile bu User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/profile/user/607cf8f951694b2752c34db1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"user",
+								"607cf8f951694b2752c34db1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create & Update profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Content Type",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZTQ0ZjUxNzlhNjcwZGE2YzRlNTgzIn0sImlhdCI6MTYxODg4NzkyNiwiZXhwIjoxNjE5MjQ3OTI2fQ.2IGrf0kzuA2KSo5Cesvyz05rKIgby5B5Ly11wdqqErU",
+								"description": "delfan token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company\": \"Binar Academy\",\n    \"status\": \"developer\",\n    \"website\": \"https://www.adhipratama.com\",\n    \"skills\": \"HTML, CSS, PHP, Ruby, Laravel, Javascript, Phyton\",\n    \"location\": \"Singapore\",\n    \"bio\": \"I am a developer for binar for 2 years\",\n    \"githubusername\": \"yogaaaaaa\",\n    \"twitter\": \"@_adhipratama\",\n    \"facebook\": \"Yoga Adhipratama\",\n    \"youtube\": \"i dont have utube\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/profile/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all profiles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZDAyNmEzMDkwYTMzMWRiODRhNjczIn0sImlhdCI6MTYxODgwNTM1NCwiZXhwIjoxNjE5MTY1MzU0fQ.GqELVMFJi9t9No3sUB91qaG1HWp8rjRKUtSpeGDbPtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/profile/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete profile and User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZWNhY2NlYzQ3MmU0NTI3ZGM0ZGIwIn0sImlhdCI6MTYxODkyMjE4OSwiZXhwIjoxNjE5MjgyMTg5fQ.0vIy3LDEbhsrLBsAuiLNvUrdS-hiLriSNv1Ke6yZJxw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add experience",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODkyMzQxNywiZXhwIjoxNjE5MjgzNDE3fQ.MHFXnXL7LGVJoh292URictM2waQgSGSrUtSXJFygEeQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Lab Assistant\",\n    \"company\": \"STIKOM Surabaya\",\n    \"location\": \"Surabaya\",\n    \"from\": \"10-10-2017\",\n    \"to\": \"1-31-2018\",\n    \"description\": \"as an assistant\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/profile/experience",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add education",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODk2OTcyMCwiZXhwIjoxNjE5MzI5NzIwfQ.k0-TPxY-pRrW70a4O4KIKFWz7_rj757KIcAfQemqwiY"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"school\": \"Test test\",\n    \"degree\": \"Bachelor\",\n    \"fieldofstudy\": \"Information System\",\n    \"from\": \"8-16-2014\",\n    \"to\": \"10-20-2018\",\n    \"description\": \"Got Bachelor in Computer Science\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/profile/education",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete profile experience",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODkyMzQxNywiZXhwIjoxNjE5MjgzNDE3fQ.MHFXnXL7LGVJoh292URictM2waQgSGSrUtSXJFygEeQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/profile/experience/607ed1e36e58014b26170f30",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"experience",
+								"607ed1e36e58014b26170f30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete profile education",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODkyMzQxNywiZXhwIjoxNjE5MjgzNDE3fQ.MHFXnXL7LGVJoh292URictM2waQgSGSrUtSXJFygEeQ"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/profile/education/607f8578b4b0e958d852dc92",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"education",
+								"607f8578b4b0e958d852dc92"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Guthub repos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/profile/github/yogaaaaaaa",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"github",
+								"yogaaaaaaa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Add post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZTQ0ZjUxNzlhNjcwZGE2YzRlNTgzIn0sImlhdCI6MTYxODk4MjExOSwiZXhwIjoxNjE5MzQyMTE5fQ.u5NQv2a4lU4XXj1iizuEBM_kHI41NDoL2PwkyUrsaR0",
+								"description": " token",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Content Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"this is post from delfaaannnn.\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/posts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxODk3NTcwNCwiZXhwIjoxNjE5MzM1NzA0fQ.CcyEzTrK6mmwC7pQXEBV70yFyOcurERMkPCpmvZwrJU",
+								"description": " token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/posts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxOTEwNDg3OCwiZXhwIjoxNjE5NDY0ODc4fQ.oxW3alIB10io35VhVT96btXahBtoqwngF_mryJFJpbI",
+								"description": " token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/posts/607fb3ae28eb4974e71e5ad0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"607fb3ae28eb4974e71e5ad0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxOTEwNDg3OCwiZXhwIjoxNjE5NDY0ODc4fQ.oxW3alIB10io35VhVT96btXahBtoqwngF_mryJFJpbI",
+								"description": " token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/posts/6081990877f64728c68edcb7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"6081990877f64728c68edcb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Like to post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZTQ0ZjUxNzlhNjcwZGE2YzRlNTgzIn0sImlhdCI6MTYxOTEwNjcwMCwiZXhwIjoxNjE5NDY2NzAwfQ.GxF2tW4QsrrMMYtpL7VN35Pgd4i9j0o2RftOdrKemO8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/posts/like/607fb3ae28eb4974e71e5ad0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"like",
+								"607fb3ae28eb4974e71e5ad0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unlike a post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3ZTQ0ZjUxNzlhNjcwZGE2YzRlNTgzIn0sImlhdCI6MTYxOTEwNjcwMCwiZXhwIjoxNjE5NDY2NzAwfQ.GxF2tW4QsrrMMYtpL7VN35Pgd4i9j0o2RftOdrKemO8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/posts/unlike/607fb3ae28eb4974e71e5ad0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"unlike",
+								"607fb3ae28eb4974e71e5ad0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
