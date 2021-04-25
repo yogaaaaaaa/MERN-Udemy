@@ -439,10 +439,11 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL}}/api/posts",
+							"raw": "localhost:5000/api/posts",
 							"host": [
-								"{{URL}}"
+								"localhost"
 							],
+							"port": "5000",
 							"path": [
 								"api",
 								"posts"
@@ -550,6 +551,73 @@
 								"posts",
 								"unlike",
 								"607fb3ae28eb4974e71e5ad0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxOTMxOTY1NywiZXhwIjoxNjE5Njc5NjU3fQ.1eepjIupiMImUbWnbwNf_-jfoWcNKgscv3JA2O1YwbE",
+								"description": " token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/posts/comment/607fb4f928eb4974e71e5ad2/6084e02f97c5eb197e1d9e3f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts",
+								"comment",
+								"607fb4f928eb4974e71e5ad2",
+								"6084e02f97c5eb197e1d9e3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA3Y2Y4Zjk1MTY5NGIyNzUyYzM0ZGIxIn0sImlhdCI6MTYxOTMxOTY1NywiZXhwIjoxNjE5Njc5NjU3fQ.1eepjIupiMImUbWnbwNf_-jfoWcNKgscv3JA2O1YwbE",
+								"description": " token",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Content Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"DELETE MEEE\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/posts/comment/607fb4f928eb4974e71e5ad2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"posts",
+								"comment",
+								"607fb4f928eb4974e71e5ad2"
 							]
 						}
 					},
