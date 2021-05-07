@@ -29,5 +29,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.4",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.23.2"
   }
 }
