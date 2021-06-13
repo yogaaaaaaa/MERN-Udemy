@@ -27,10 +27,9 @@ const AddExperience = ({
 
   return (
     <Fragment>
-      <h1 class="large text-primary">Add An Experience</h1>
+      <h1 class="large text-primary">Pengalaman Kerja</h1>
       <p class="lead">
-        <i class="fas fa-code-branch"></i> Add any developer/programming
-        positions that you have had in the past
+        <i class="fas fa-code-branch"></i> Pengalaman kerja anda, pernah kerja dimana aja bro/sis ?
       </p>
       <small>* = required field</small>
       <form class="form" onSubmit={e => {
@@ -108,7 +107,7 @@ const AddExperience = ({
           ></textarea>
         </div>
         <input type="submit" class="btn btn-primary my-1" />
-        <a class="btn btn-light my-1" href="dashboard.html">
+        <a class="btn btn-light my-1" href="/dashboard">
           Go Back
         </a>
       </form>

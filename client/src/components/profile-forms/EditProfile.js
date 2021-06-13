@@ -72,12 +72,11 @@ const EditProfile = ({
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">Edit Profil Anda</h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
-        profile stand out
+        <i className="fas fa-user"></i> Diisi lahh profilnya, masa engga?
       </p>
-      <small>* = required field</small>
+      <small>* = WAJIB DIISI DONGGG</small>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <select name="status" value={status} onChange={(e) => onChange(e)}>
@@ -92,7 +91,7 @@ const EditProfile = ({
             <option value="Other">Other</option>
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+            Posisi mu apa? Kiper atau striker, eh bukan....
           </small>
         </div>
         <div className="form-group">
@@ -104,7 +103,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+            Nama tempat kerjamu
           </small>
         </div>
         <div className="form-group">
@@ -116,7 +115,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Could be your own or a company website
+            Situs mu, situs jualan juga boleh kue kering, bukan situs ******.
           </small>
         </div>
         <div className="form-group">
@@ -128,7 +127,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+            Kota asalmu.
           </small>
         </div>
         <div className="form-group">
@@ -140,7 +139,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Bahasa yang u kuasai, bukan arab cina inggris hewan (eg. HTML,CSS,JavaScript,PHP)
           </small>
         </div>
         <div className="form-group">
@@ -152,8 +151,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
+            Github atau gitlab mu masukin sini.
           </small>
         </div>
         <div className="form-group">
@@ -163,7 +161,7 @@ const EditProfile = ({
             value={bio}
             onChange={(e) => onChange(e)}
           ></textarea>
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">DESKRIPSIKAN HAL YANG MENARIQUE TENTANG ANDA !!!</small>
         </div>
 
         <div className="my-2">
@@ -172,9 +170,10 @@ const EditProfile = ({
             type="button"
             className="btn btn-light"
           >
-            Add Social Network Links
+            Sosmedmu masukin sini.
           </button>
-          <span>Optional</span>
+          <span>مباح (Optional)</span>
+          <small className="form-text">jangan terlalu anti sosial, sosial club</small>
         </div>
 
         {displaySocialInput && (
