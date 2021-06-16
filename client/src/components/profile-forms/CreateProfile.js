@@ -50,7 +50,7 @@ const CreateProfile = ({createProfile, history}) => {
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
       <p className="lead">
-        <i className="fas fa-user"></i> LDiisi lahh profilnya, masa engga?
+        <i className="fas fa-user"></i> Diisi lahh profilnya, masa engga?
       </p>
       <small>* = WAJIB DIISI DONGGG</small>
       <form className="form" onSubmit={e => onSubmit(e)}>

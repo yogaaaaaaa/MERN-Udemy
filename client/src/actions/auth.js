@@ -46,6 +46,9 @@ export const register = ({ name, email, password }) => async (dispatch) => {
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
+
+    dispatch(setAlert("Anda berhasil mendaftar, silahkan login", "success"));
+
   } catch (err) {
     const errors = err.response.data.errors;
 
