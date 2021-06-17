@@ -104,4 +104,4 @@ const mapStateToProps = state => ({
 
 
 
-export default connect(null, { setAlert, register })(Register);
+export default connect(mapStateToProps, { setAlert, register })(Register);
