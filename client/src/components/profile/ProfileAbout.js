@@ -29,6 +29,7 @@ const ProfileAbout = ({
   </div>
 );
 
+
 ProfileAbout.propTypes = {};
 
 export default ProfileAbout;
